@@ -113,19 +113,15 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
 
 ### Syntaxic sugars
 
-Before moving to the next activity, it is worth noting that several shortcuts have been implemented to shorten CLI commands for Containerlab.
-    \
-    `containerlab` -> `clab`
-    \
-    `deploy` ->  `dep`
-    \
-    `destroy` ->  `des`
-    \
-    `--cleanup` -> `-c`, used only with `containerlab destroy` to erase the artifacts folder associated.
-    \
-    `--reconfigure` -> `-c`,  used only with `containerlab deploy` to redeploy a live topology from scratch.
-    \
-    A typical command would end up being `clab dep -c` or `clab des -c`.
+Before moving to the next activity, it is worth noting that several shortcuts are available to shorten CLI commands for Containerlab.
+
+* `containerlab` -> `clab`
+* `deploy` ->  `dep`
+* `destroy` ->  `des`
+* `--cleanup` -> `-c`, used only with `containerlab destroy` to erase the artifacts folder associated.
+* `--reconfigure` -> `-c`,  used only with `containerlab deploy` to redeploy a live topology from scratch.
+* A typical command would end up being `clab dep -c` or `clab des -c`.
+* When executing `clab dep` or `clab des` in a folder containing only one file with the .clab.yml extension, it is not necessary to refer to it with the `-t` flag. `clab dep` or `clab des` is enough to deploy or destroy the topology.
 
 ## Task 1b: Topology Modification - Adding Nodes and Links
 
@@ -218,7 +214,7 @@ This task explores how Containerlab handles attribute precedence when `default` 
 3. **Deploy and observe precedence:**
 
     ```bash
-    containerlab deploy -t 01-init-final-default.clab.yml
+    containerlab deploy -t 01-init.clab.yml
     ```
 
     *Expected:*
