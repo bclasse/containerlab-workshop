@@ -8,11 +8,11 @@ This activity guides you through deploying and managing Containerlab topologies 
 
 Open the `Extensions` tab on VS Code and search for `Containerlab`. From there, install the extension. It should take just a minute.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 A new tab for Containerlab should now be displayed:
 
-![alt text](image-12.png)
+![alt text](img/image-12.png)
 
 ## Task 2b: Deploy a topology with the extension
 
@@ -20,46 +20,46 @@ A new tab for Containerlab should now be displayed:
     * Click on the Containerlab icon in the VS Code Activity Bar (on the left side).
     * Under the "Undeployed Local Labs" section, you should see `02-vscode.clab.yml`. Selecting it will open the topology view with a palette on the right.
 
-    ![alt text](image-13.png)
+    ![alt text](img/image-13.png)
 
     * On the right, a menu is displayed with multiple options to manipulate the topology.
 
-    ![alt text](image-9.png)
+    ![alt text](img/image-9.png)
 
     * Click on one of the nodes - new options will appear on the right menu.
 
-    ![alt text](image-10.png)
+    ![alt text](img/image-10.png)
 
 2. **Deploy the Topology:**
     * In the topology view, locate and click the **"Deploy"** button.
 
-    ![alt text](image-1.png)
+    ![alt text](img/image-1.png)
 
     * *Expected:* The topology will be deployed, and the nodes will transition to a "running" state. You can verify this in the "Running Labs" section of the Containerlab tab.
 
-    ![alt text](image-14.png)
+    ![alt text](img/image-14.png)
 
-    ![alt text](image-15.png)
+    ![alt text](img/image-15.png)
 
 3. **Explore Node Contextual Menus:**
     * **In the Topology View:**
         * Right-click on one of the deployed nodes in the visual topology diagram.
         * Observe the various options available in the contextual menu.
 
-        ![alt text](image-2.png)
+        ![alt text](img/image-2.png)
 
         * Now, right-click on the link and observe the list of options specific to links.
 
-        ![alt text](image-5.png)
+        ![alt text](img/image-5.png)
 
     * **In the Containerlab Tab:**
         * In the Containerlab Activity Bar tab, under "Running Labs," expand `02-vscode`.
         * Right-click successively on the lab, a node and an interface.
         * Observe the contextual menu options for each, which also provide node management actions.
 
-        ![alt text](image-4.png)
-        ![alt text](image-3.png)
-        ![alt text](image-6.png)
+        ![alt text](img/image-4.png)
+        ![alt text](img/image-3.png)
+        ![alt text](img/image-6.png)
 
     * **In the Explorer Tab:**
         * In the VS Code File Explorer, right-click on the topology file `02-vscode.clab.yml`.
@@ -72,11 +72,11 @@ A new tab for Containerlab should now be displayed:
     * **Stop the topology and unlock the canvas**
         * To modify a lab with the topology viewer, it needs to be inactive/not deployed. Since we deployed the lab in the previous steps, it should be destroyed before continuing. Use your preferred method to destroy the lab - a square button is available for this usage. 
 
-        ![alt text](image-8.png)
+        ![alt text](img/image-8.png)
 
         * By default, the topology viewer is locked to avoid mistakes. Unlock the canvas by clicking on the lock icon:
 
-        ![alt text](image-11.png)
+        ![alt text](img/image-11.png)
 
     * **Add a New Node:**
         * *Exercise:* Try to add one more node to your topology using either method:
