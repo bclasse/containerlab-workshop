@@ -62,7 +62,7 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
         show interface brief
         ```
 
-        *Expected:* You should observe approximately 58 interfaces.
+        *Expected:* You should observe 58 down interfaces and one up interface, mgmt0.
     * **Check Management Interface:** Verify the status and configuration of the management interface.
 
         ```bash
@@ -86,8 +86,8 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
         ```
 
         *Expected:* The system has been changed and visible on the prompt.
-8. **Destroy the Topology (without --cleanup flag):**
-    * Exit the SSH session and destroy the Containerlab topology.
+8. **Destroy the topology (without --cleanup flag):**
+    * Exit the SSH session by typing `quit`, and destroy the Containerlab topology.
 
     ```bash
     containerlab destroy -t 01-init.clab.yml
@@ -101,7 +101,7 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
     containerlab deploy -t 01-init.clab.yml
     ```
 
-    *Expected:* The node is running again and is using the previous configuration file from the local `clab-01-init` folder.
+    *Expected:* Connect to the node, it is using the previous configuration file from the local `clab-01-init` folder, can be seen in the host-name section of the prompt.
 10. **Destroy the Topology (with cleanup):**
      * Execute the destroy command again, this time with the `--cleanup` flag.
 
