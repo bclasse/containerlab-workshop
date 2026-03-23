@@ -9,8 +9,10 @@ topology:
 
   nodes:
     leaf1:
+      startup-config: configs/leaf1.cfg
       type: ixr-d2l
     leaf2:
+      startup-config: configs/leaf2.cfg
       type: ixr-d2l
 
   links:

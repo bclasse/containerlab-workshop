@@ -4,14 +4,14 @@ This activity explores key configuration capabilities for all kinds of nodes wit
 
 ---
 
-## Task 4: Configuring a Linux Node for Grafana Deployment
+## Task 4: Deploying a Grafana instance
 
-This task demonstrates how to configure a Linux node to run a Grafana instance, focusing on common deployment requirements like persistent storage (via binds), network accessibility (via port mapping), and application-specific settings (via environment variables).
+This task demonstrates how to deploy a Grafana instance, focusing on common deployment requirements like persistent storage (via binds), network accessibility (via port mapping), and application-specific settings (via environment variables).
 
 1. **Deploy the topology and examine file binds and permissions:**
     * Deploy the topology using your favourite method.
-    * **Understanding Binds:** Containerlab allows you to "bind" local host directories or files into the container's filesystem. This is crucial for persistent storage (e.g., Grafana data, configurations) or injecting custom files.
-    * **Locate Binds in Topology:** Open the `04-env.clab.yml` file. Look for the `binds:` section under the Grafana node definition.
+    * **Understanding binds:** Containerlab allows you to "bind" local host directories or files into the container's filesystem. This is crucial for persistent storage (e.g., Grafana data, configurations) or injecting custom files.
+    * **Locate binds in Topology:** Open the `04-env.clab.yml` file. Look for the `binds:` section under the Grafana node definition.
 
         ```yaml
         nodes:
@@ -26,7 +26,7 @@ This task demonstrates how to configure a Linux node to run a Grafana instance, 
     * Observe how local paths (e.g., `configs/grafana/datasource.yml`) are mapped to container paths (e.g., `/etc/grafana/provisioning/datasources/datasource.yaml`).
     * Note the `ro` (read-only) that causes the volume to be mounted into the container as read-only.
 
-    * **Verify Binds in Container:**
+    * **Verify binds in container:**
         * Connect to the Grafana container using docker exec:
 
             ```bash
@@ -57,7 +57,7 @@ This task demonstrates how to configure a Linux node to run a Grafana instance, 
     * **Access Grafana:**
         * Open your web browser and navigate to `http://localhost:3000`, you should see the Grafana login page.
 
-3. **Examine Environment Variables:**
+3. **Examine environment variables:**
     * Environment variables are a common way to pass configuration settings to applications running inside containers without modifying the container image itself.
     * In `04-env.clab.yml`, look for the `env:` section under the Grafana node definition.
 

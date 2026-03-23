@@ -30,7 +30,7 @@ A new tab for Containerlab should now be displayed:
 
     ![alt text](img/image-10.png)
 
-2. **Deploy the Topology:**
+2. **Deploy the topology:**
     * In the topology view, locate and click the **"Deploy"** button.
 
     ![alt text](img/image-1.png)
@@ -41,8 +41,8 @@ A new tab for Containerlab should now be displayed:
 
     ![alt text](img/image-15.png)
 
-3. **Explore Node Contextual Menus:**
-    * **In the Topology View:**
+3. **Explore node contextual menus:**
+    * **In the topology view:**
         * Right-click on one of the deployed nodes in the visual topology diagram.
         * Observe the various options available in the contextual menu.
 
@@ -52,7 +52,7 @@ A new tab for Containerlab should now be displayed:
 
         ![alt text](img/image-5.png)
 
-    * **In the Containerlab Tab:**
+    * **In the Containerlab tab:**
         * In the Containerlab Activity Bar tab, under "Running Labs," expand `02-vscode`.
         * Right-click successively on the lab, a node and an interface.
         * Observe the contextual menu options for each, which also provide node management actions.
@@ -61,13 +61,13 @@ A new tab for Containerlab should now be displayed:
         ![alt text](img/image-3.png)
         ![alt text](img/image-6.png)
 
-    * **In the Explorer Tab:**
+    * **In the Explorer tab:**
         * In the VS Code File Explorer, right-click on the topology file `02-vscode.clab.yml`.
         * Observe the contextual menu options, which typical actions to deploy or destroy the lab.
 
 ## Task 2c: Modify the topology with the extension
 
-1. **Use the Toolbox (Palette) to add elements:**
+1. **Use the toolbox (palette) to add elements:**
     * Back to the topology view now! On the right side of the topology view, you'll see a "Toolbox" or "Palette". This allows users to add elements without having to write themselves in the YAML file.
     * **Stop the topology and unlock the canvas**
         * To modify a lab with the topology viewer, it needs to be inactive/not deployed. Since we deployed the lab in the previous steps, it should be destroyed before continuing. Use your preferred method to destroy the lab - a square button is available for this usage. 
@@ -78,11 +78,11 @@ A new tab for Containerlab should now be displayed:
 
         ![alt text](img/image-11.png)
 
-    * **Add a New Node:**
+    * **Add a new node:**
         * *Exercise:* Try to add one more node to your topology using either method:
-            * **Drag and Drop:** Drag a node type (e.g., `SR Linux Latest`) from the palette onto the canvas.
-            * **Right-Click:** Right-click on an empty space on the canvas and select "Add Node."
-    * **Define a Link:**
+            * **Drag and drop:** Drag a node type (e.g., `SR Linux Latest`) from the palette onto the canvas.
+            * **Right-click:** Right-click on an empty space on the canvas and select "Add Node."
+    * **Define a link:**
         * *Exercise:* Next, define a link:
             * Right-click on an existing node (e.g., `leaf1`).
             * Then, click on another node (e.g., your newly added node) to establish a link between them.

@@ -52,6 +52,8 @@
       "roundedBackground": true
     }
   ],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
   "groupStyleAnnotations": [
     {
       "id": "Telemetry Stack:1",
@@ -62,10 +64,19 @@
       "borderStyle": "solid",
       "borderRadius": 4,
       "color": "#ebecf0",
-      "labelPosition": "top-center"
+      "labelPosition": "top-center",
+      "name": "Telemetry Stack",
+      "level": "1",
+      "position": {
+        "x": 261,
+        "y": 65
+      },
+      "width": 300,
+      "height": 208,
+      "labelColor": "#ebecf0"
     }
   ],
-  "cloudNodeAnnotations": [],
+  "networkNodeAnnotations": [],
   "nodeAnnotations": [
     {
       "id": "gnmic",
@@ -147,7 +158,8 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}"
     },
     {
       "id": "spine2",
@@ -159,7 +171,8 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}"
     },
     {
       "id": "leaf1",
@@ -171,7 +184,8 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}"
     },
     {
       "id": "leaf2",
@@ -183,7 +197,8 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}"
     },
     {
       "id": "leaf3",
@@ -195,7 +210,8 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}"
     },
     {
       "id": "client1",
@@ -233,5 +249,9 @@
         "lng": 9.007895390625677
       }
     }
-  ]
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {},
+  "cloudNodeAnnotations": []
 }

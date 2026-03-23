@@ -1,18 +1,18 @@
-# Containerlab Workshop: Activity 1 - Basic Topology Management
+# Containerlab Workshop: Activity 1 - Basic topology management
 
 This activity introduces fundamental Containerlab operations, including deploying single-node topologies, inspecting their configurations, modifying existing topologies by adding nodes and links, and optimizing topology definitions.
 
 ---
 
-## Task 1a: Single Node Deployment and Discovery
+## Task 1a: Single node deployment and discovery
 
 In this step, you will deploy a basic single-node topology, inspect the parameters configured by Containerlab during deployment, and understand the different `destroy` options.
 
-**Topology File:** `01-init.clab.yml`
+**Topology file:** `01-init.clab.yml`
 
 **Steps:**
 
-1. **Check Running Docker Containers (Before Deployment):**
+1. **Check running Docker containers (before deployment):**
     * Execute `docker ps` to see currently running containers.
 
     ```bash
@@ -23,14 +23,14 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
 2. **Read the topology file:** Open 01-init.clab.yml and read the content of the file. What topology does this file describe ?
 
     *Answer:* A single-node topology running Nokia SR Linux version 25.10.1.
-3. **Deploy the Topology:**
+3. **Deploy the topology:**
     * Execute the following command to deploy the topology with Containerlab.
 
     ```bash
     containerlab deploy -t 01-init.clab.yml
     ```
 
-4. **Check Running Docker Containers (After Deployment):**
+4. **Check running Docker containers (after deployment):**
     * Execute `docker ps` again to observe the newly deployed Containerlab node(s).
 
     ```bash
@@ -38,17 +38,17 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
     ```
 
     *Expected:* You should now see containers related to your `01-init.clab.yml` topology (e.g., `clab-01-init-leaf1`).
-5. **Inspect Created Folder and Files:**
+5. **Inspect created folder and files:**
     * Observe the `clab-01-init` directory created by Containerlab, containing configuration files and other deployment artifacts.
     * Execute `cat /etc/hosts` and observe the new entries added by Containerlab
-6. **SSH into the Node:**
+6. **SSH into the node:**
     * Connect to the deployed `leaf1` node using the provided SSH command.
 
     ```bash
     ssh admin@clab-01-init-leaf1
     ```
 
-7. **Inspect Node Configuration (inside the SSH session):**
+7. **Inspect node configuration (inside the SSH session):**
     * **Check Version:** Verify the software version.
 
         ```bash
@@ -56,21 +56,21 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
         ```
 
         *Expected:* The output should indicate a "D2L" type.
-    * **Check Interfaces:** List the network interfaces.
+    * **Check interfaces:** List the network interfaces.
 
         ```bash
         show interface brief
         ```
 
         *Expected:* You should observe approximately 58 interfaces.
-    * **Check Management Interface:** Verify the status and configuration of the management interface.
+    * **Check management interface:** Verify the status and configuration of the management interface.
 
         ```bash
         show interface management
         ```
 
         *Expected:* The management interface should be up and configured.
-    * **Check SSH Keys:** Confirm that SSH keys have been populated for authentication.
+    * **Check SSH keys:** Confirm that SSH keys have been populated for authentication.
 
         ```bash
         info system aaa authentication admin-user ssh-key
@@ -102,7 +102,7 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
     ```
 
     *Expected:* The node is running again and is using the previous configuration file from the local `clab-01-init` folder.
-10. **Destroy the Topology (with cleanup):**
+10. **Destroy the topology (with cleanup):**
      * Execute the destroy command again, this time with the `--cleanup` flag.
 
      ```bash
@@ -123,19 +123,19 @@ Before moving to the next activity, it is worth noting that several shortcuts ar
 * A typical command would end up being `clab dep -c` or `clab des -c`.
 * When executing `clab dep` or `clab des` in a folder containing only one file with the .clab.yml extension, it is not necessary to refer to it with the `-t` flag. `clab dep` or `clab des` is enough to deploy or destroy the topology.
 
-## Task 1b: Topology Modification - Adding Nodes and Links
+## Task 1b: Topology modification - adding nodes and links
 
 In this step, you will modify the initial topology to add a second node and establish a link between the two nodes.
 
 **Steps:**
 
-1. **Add a New Node:**
+1. **Add a new node:**
     * Edit the `01-init.clab.yml` file.
     * Add a new node named `leaf2` with the same attributes (image, kind, etc.) as `leaf1`.
-2. **Add a Link:**
+2. **Add a link:**
     * Uncomment the `links` section in the `01-init.clab.yml` file.
     * Modify the existing `endpoints` definition to connect `leaf1`'s `ethernet-1/1` interface to `leaf2`'s `ethernet-1/2` interface.
-3. **Deploy the Modified Topology:**
+3. **Deploy the modified topology:**
 
     ```bash
     clab dep -t 01-init.clab.yml
@@ -155,7 +155,7 @@ In this step, you will modify the initial topology to add a second node and esta
 
 This task focuses on optimizing your topology definition by leveraging Containerlab's `kinds` feature to centralize common attributes.
 
-**Topology File:** `01-init-final.clab.yml`
+**Topology file:** `01-init-final.clab.yml`
 
 **Steps:**
 
@@ -173,7 +173,7 @@ This task focuses on optimizing your topology definition by leveraging Container
     * This redefines what the kind `nokia_srlinux` means. It assigns a default image to the kind and overrides the default type used.
 2. **Remove redundant attributes from the nodes:**
     * For each node (`leaf1`, `leaf2`), remove the `image` attribute, as it will now be inherited from the `nokia_srlinux` kind.
-3. **Deploy, Check, and Destroy:**
+3. **Deploy, check, and destroy:**
     * Deploy the optimized topology:
 
         ```bash
@@ -190,11 +190,11 @@ This task focuses on optimizing your topology definition by leveraging Container
 
 ---
 
-## Task 1d: Understanding Precedence with Default Kinds and Node Overrides
+## Task 1d: Understanding precedence with default kinds and node overrides
 
 This task explores how Containerlab handles attribute precedence when `default` kinds are defined and specific attributes are overridden at the node level.
 
-**Topology File:** `01-init-final-default.clab.yml`
+**Topology file:** `01-init-final-default.clab.yml`
 
 **Steps:**
 
