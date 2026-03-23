@@ -86,8 +86,8 @@ In this step, you will deploy a basic single-node topology, inspect the paramete
         ```
 
         *Expected:* The system has been changed and visible on the prompt.
-8. **Destroy the Topology (without --cleanup flag):**
-    * Exit the SSH session and destroy the Containerlab topology.
+8. **Destroy the topology (without --cleanup flag):**
+    * Exit the SSH session by typing `quit`, and destroy the Containerlab topology.
 
     ```bash
     containerlab destroy -t 01-init.clab.yml
